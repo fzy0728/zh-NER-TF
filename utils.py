@@ -15,7 +15,30 @@ def get_entity(tag_seq, char_seq):
     PER = get_PER_entity(tag_seq, char_seq)
     LOC = get_LOC_entity(tag_seq, char_seq)
     ORG = get_ORG_entity(tag_seq, char_seq)
-    return PER, LOC, ORG
+    RES = get_RES_entity(tag_seq, char_seq)
+    return PER, LOC, ORG, RES
+
+def get_RES_entity(tag_seq, char_seq):
+    length = len(char_seq)
+    PER = []
+    for i, (char, tag) in enumerate(zip(char_seq, tag_seq)):
+        if tag == 'B':
+            if 'per' in locals().keys():
+                PER.append(per)
+                del per
+            per = char
+            if i+1 == length:
+                PER.append(per)
+        if tag == 'I':
+            per += char
+            if i+1 == length:
+                PER.append(per)
+        if tag not in ['I', 'B']:
+            if 'per' in locals().keys():
+                PER.append(per)
+                del per
+            continue
+    return PER
 
 
 def get_PER_entity(tag_seq, char_seq):

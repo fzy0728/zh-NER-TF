@@ -8,6 +8,10 @@ tag2label = {"O": 0,
              "B-ORG": 5, "I-ORG": 6
              }
 
+#tag2label = {"O": 0,
+#             "B": 1, "I": 2
+#             }
+
 
 def read_corpus(corpus_path):
     """
@@ -33,7 +37,6 @@ def read_corpus(corpus_path):
 
 def vocab_build(vocab_path, corpus_path, min_count):
     """
-
     :param vocab_path:
     :param corpus_path:
     :param min_count:
