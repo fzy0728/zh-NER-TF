@@ -55,6 +55,10 @@ You can input one Chinese sentence and the model will return the recognition res
 ![demo_pic](./pics/pic2.png)
 
 
+### my work
+
+运行起来没什么大的问题，并且训练了一个新的模型，放在`/data_path_save/1533196019`中，并且记录了每次epoch的结果，在`results`目录下
+与上面的结果几乎无差，加了一个字段，判断菜品，结果也还可以90%左右，在gpu下需要训练大概5个小时左右。
 
 ### references
 
